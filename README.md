@@ -9,8 +9,10 @@ The package supports [Jekyll](https://github.com/jekyll) style blogging,
 such that you can directly copy the generated file into your `_posts/` folder. 
 
 ## Usage
-```
-const markdownConverter = require('markdown-converter');
+```javascript
+
+const markdownConverter = require('medium-markdown');
+
 async function main(postUrl) {
     markdownConverter.generateFile(
         await markdownConverter.convert(postUrl));
