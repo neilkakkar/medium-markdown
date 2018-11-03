@@ -1,0 +1,29 @@
+{
+  "name": "markdownconverter",
+  "version": "0.1.0",
+  "description": "A package to convert HTML to Markdown, specifically for Medium posts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neilkakkar/markdownConverter.git"
+  },
+  "author": "Neil Kakkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neilkakkar/markdownConverter/issues"
+  },
+  "homepage": "https://github.com/neilkakkar/markdownConverter#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0",
+    "turndown": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
