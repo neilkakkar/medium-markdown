@@ -1,5 +1,5 @@
 # Medium Markdown
-[![npm V0.1.0](https://img.shields.io/badge/npm-0.1.1-orange.svg)](https://www.npmjs.com/package/medium-markdown)
+[![npm V0.1.0](https://img.shields.io/badge/npm-0.1.3-orange.svg)](https://www.npmjs.com/package/medium-markdown)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/neilkakkar/medium-markdown/blob/master/LICENSE)
 
 ## Introduction
