@@ -4,6 +4,8 @@ const util = require('util');
 const fs = require('fs');
 const cheerio = require('cheerio');
 
+const rules = require('./rules');
+
 const asyncGetRequest = util.promisify(request.get).bind(request);
 const asyncWriteFile = util.promisify(fs.writeFile).bind(fs);
 
@@ -16,6 +18,9 @@ async function convert(url) {
             console.log('Error while fetching URL');
             return resp.statusMessage;
         }
+
+        turndownService.addRule('lineBreakRule', rules.linebreakRule)
+        
         const $ = cheerio.load(resp.body);
         const html = $('.postArticle-content').html();
         const markdown = turndownService.turndown(html);
