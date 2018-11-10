@@ -19,7 +19,9 @@ async function convert(url) {
             return resp.statusMessage;
         }
 
-        turndownService.addRule('lineBreakRule', rules.linebreakRule)
+        turndownService.addRule('lineBreakRule', rules.linebreakRule);
+        turndownService.addRule('figureDivNoLineBreakRule', rules.figureDivNoLinkeBreakRule);
+        turndownService.addRule('figureCapNoLineBreakRule', rules.figCaptionEnclosing);
         
         const $ = cheerio.load(resp.body);
         const html = $('.postArticle-content').html();
@@ -33,10 +35,11 @@ async function convert(url) {
     }
 }
 
-async function generateFile(data) {
+async function generateFile(data, paddingBefore = '', paddingAfter = '') {
     try {
         const fileName = `${data.time}-${data.heading}.md`;
-        await asyncWriteFile(fileName, data.markdown);
+        const toWrite = paddingBefore + data.markdown + paddingAfter;
+        await asyncWriteFile(fileName, toWrite);
         console.log(`Success - Written file ${fileName}`);
     } catch (err) {
         console.log(err);
