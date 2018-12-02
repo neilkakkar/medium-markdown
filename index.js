@@ -22,6 +22,9 @@ async function convert(url) {
         turndownService.addRule('lineBreakRule', rules.linebreakRule);
         turndownService.addRule('figureDivNoLineBreakRule', rules.figureDivNoLinkeBreakRule);
         turndownService.addRule('figureCapNoLineBreakRule', rules.figCaptionEnclosing);
+        turndownService.addRule('codeFormattingRule', rules.codeFormattingRule);
+
+        turndownService.keep(['b']);
         
         const $ = cheerio.load(resp.body);
         const html = $('.postArticle-content').html();

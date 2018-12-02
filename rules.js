@@ -34,8 +34,29 @@ const figCaptionEnclosing = {
     }
 }
 
+const codeFormattingRule = {
+    filter: 'pre',
+    replacement: function(content, node, options) {
+        const end = '```\n';
+        const begin = '```code_language\n';
+        const linebreak = '\n';
+        const NODENAME = 'PRE';
+        if (node.nextSibling && node.nextSibling.nodeName === NODENAME) {
+            if (node.previousSibling && node.previousSibling.nodeName === NODENAME) {
+                return content + linebreak;
+            }
+            return begin + content + linebreak;
+        }
+        if (node.previousSibling && node.previousSibling.nodeName === NODENAME) {
+            return content + linebreak + end;
+        }
+        return begin + content + linebreak + end;
+    }
+}
+
 module.exports = {
     linebreakRule,
     figureDivNoLinkeBreakRule,
     figCaptionEnclosing,
+    codeFormattingRule,
 };
