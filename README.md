@@ -69,4 +69,4 @@ img + em {
 
 ```
 
-This returns me, precisely, [this](http://neilkakkar.com/2018/11/09/Writing-isn't-about-more.html)
+This returns me, precisely, [this](https://neilkakkar.com/Writing-isn't-about-more.html)
